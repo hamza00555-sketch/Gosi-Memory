@@ -1,0 +1,85 @@
+{
+  "cosmetics": [
+    {
+      "id": "skin_default",
+      "name": "كلاسيكي",
+      "type": "card_skin",
+      "items": ["back_classic"],
+      "price": 0,
+      "isDefault": true,
+      "description": "ظهر بطاقة أنيق بلون كحلي."
+    },
+    {
+      "id": "skin_neon",
+      "name": "نيون",
+      "type": "card_skin",
+      "items": ["back_neon"],
+      "price": 500,
+      "isDefault": false,
+      "description": "حواف نيونية متوهجة."
+    },
+    {
+      "id": "skin_carbon",
+      "name": "كربون",
+      "type": "card_skin",
+      "items": ["back_carbon"],
+      "price": 750,
+      "isDefault": false,
+      "description": "نسيج كربوني فاخر."
+    },
+    {
+      "id": "ar_default",
+      "name": "أساسي",
+      "type": "ar_set",
+      "items": ["ar_key", "ar_heart", "ar_coffee", "ar_star"],
+      "price": 0,
+      "isDefault": true,
+      "description": "مجموعة عناصر افتراضية."
+    },
+    {
+      "id": "neon_set",
+      "name": "نيون",
+      "type": "ar_set",
+      "items": ["neon_key", "neon_heart", "neon_coffee", "neon_star"],
+      "price": 900,
+      "isDefault": false,
+      "description": "عناصر AR نيونية متوهجة."
+    },
+    {
+      "id": "match_default",
+      "name": "وميض",
+      "type": "match_effect",
+      "items": ["fx_flash"],
+      "price": 0,
+      "isDefault": true,
+      "description": "تأثير وميض عند المطابقة."
+    },
+    {
+      "id": "match_sparkle",
+      "name": "بريق",
+      "type": "match_effect",
+      "items": ["fx_sparkle"],
+      "price": 400,
+      "isDefault": false,
+      "description": "بريق نجمي عند المطابقة."
+    },
+    {
+      "id": "victory_default",
+      "name": "احتفال",
+      "type": "victory_effect",
+      "items": ["fx_confetti"],
+      "price": 0,
+      "isDefault": true,
+      "description": "قصاصات ورقية عند الفوز."
+    },
+    {
+      "id": "victory_fireworks",
+      "name": "ألعاب نارية",
+      "type": "victory_effect",
+      "items": ["fx_fireworks"],
+      "price": 1200,
+      "isDefault": false,
+      "description": "ألعاب نارية فاخرة عند الفوز."
+    }
+  ]
+}

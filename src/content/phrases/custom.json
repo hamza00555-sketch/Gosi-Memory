@@ -1,0 +1,24 @@
+{
+  "id": "pack_custom",
+  "name": "مخصص",
+  "description": "حزمة داخلية قابلة للتعديل لكل فريق.",
+  "sourceType": "custom",
+  "phrases": [
+    {
+      "id": "custom_001",
+      "category": "مخصص",
+      "fullText": "مرحبا بالفريق الجديد",
+      "words": ["مرحبا", "بالفريق", "الجديد"],
+      "difficulty": "easy",
+      "sourceType": "custom"
+    },
+    {
+      "id": "custom_002",
+      "category": "مخصص",
+      "fullText": "نحو هدف مشترك",
+      "words": ["نحو", "هدف", "مشترك"],
+      "difficulty": "easy",
+      "sourceType": "custom"
+    }
+  ]
+}

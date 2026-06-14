@@ -1,0 +1,40 @@
+{
+  "id": "pack_social",
+  "name": "اجتماعي",
+  "description": "عبارات اجتماعية مرحة للفريق.",
+  "sourceType": "meme",
+  "phrases": [
+    {
+      "id": "social_001",
+      "category": "اجتماعي",
+      "fullText": "القهوة أولا",
+      "words": ["القهوة", "أولا"],
+      "difficulty": "easy",
+      "sourceType": "meme"
+    },
+    {
+      "id": "social_002",
+      "category": "اجتماعي",
+      "fullText": "فريق واحد هدف واحد",
+      "words": ["فريق", "واحد", "هدف", "واحد"],
+      "difficulty": "medium",
+      "sourceType": "meme"
+    },
+    {
+      "id": "social_003",
+      "category": "اجتماعي",
+      "fullText": "خميس سعيد للجميع",
+      "words": ["خميس", "سعيد", "للجميع"],
+      "difficulty": "easy",
+      "sourceType": "meme"
+    },
+    {
+      "id": "social_004",
+      "category": "اجتماعي",
+      "fullText": "ابتسم فالكاميرا تعمل",
+      "words": ["ابتسم", "فالكاميرا", "تعمل"],
+      "difficulty": "medium",
+      "sourceType": "meme"
+    }
+  ]
+}
