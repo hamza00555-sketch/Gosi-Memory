@@ -1,5 +1,5 @@
 import type { Card } from '../../core/types/card';
-import { glyphFor } from './faceAssets';
+import { glyphFor, imagePathFor } from './faceAssets';
 
 interface CardGridProps {
   cards: Card[];
@@ -25,6 +25,21 @@ export function CardGrid({ cards, disabled, onScan }: CardGridProps): JSX.Elemen
   );
 }
 
+function CardFace({ faceAssetId }: { faceAssetId: string }): JSX.Element {
+  const imagePath = imagePathFor(faceAssetId);
+  if (imagePath) {
+    return (
+      <img
+        src={imagePath}
+        alt={faceAssetId}
+        className="h-full w-full rounded-xl object-cover"
+        draggable={false}
+      />
+    );
+  }
+  return <span className="text-3xl">{glyphFor(faceAssetId)}</span>;
+}
+
 function CardTile({
   card,
   disabled,
@@ -41,7 +56,7 @@ function CardTile({
     <button
       disabled={!interactive}
       onClick={() => onScan(card.id)}
-      className={`relative aspect-[3/4] rounded-xl border text-3xl transition ${
+      className={`relative aspect-[3/4] rounded-xl border transition ${
         card.isMatched
           ? 'border-brand-green/70 bg-brand-green/15 shadow-glow-green'
           : faceUp
@@ -51,9 +66,9 @@ function CardTile({
               : 'border-white/10 bg-navy-800/50'
       }`}
     >
-      <span className="absolute inset-0 flex items-center justify-center">
+      <span className="absolute inset-0 flex items-center justify-center overflow-hidden rounded-xl">
         {faceUp ? (
-          glyphFor(card.faceAssetId)
+          <CardFace faceAssetId={card.faceAssetId} />
         ) : (
           <span className="font-display text-lg font-bold text-brand-cyan/40">قوسي</span>
         )}

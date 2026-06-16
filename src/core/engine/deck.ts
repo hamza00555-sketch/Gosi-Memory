@@ -8,6 +8,7 @@ import { createRng, shuffle, type Rng } from '../utils/rng';
  * than scattered magic strings. Swap ids for real art / AR objects later.
  */
 export const FACE_ASSETS: string[] = [
+  'face_qawsi_seal', // pair_0 — image-based face (public/assets/cards/qawsi-seal-card-08.png)
   'face_key',
   'face_heart',
   'face_coffee',
