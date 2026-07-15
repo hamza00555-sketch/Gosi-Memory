@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 300 300">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fdeef2"/><stop offset="1" stop-color="#f7cfd9"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" fill="url(#bg)"/>
+  <g>
+    <path d="M0 52 q12.5 -8 25 0 q12.5 -8 25 0 q12.5 -8 25 0 q12.5 -8 25 0 q12.5 -8 25 0 q12.5 -8 25 0 q12.5 -8 25 0 q12.5 -8 25 0 q12.5 -8 25 0 q12.5 -8 25 0 q12.5 -8 25 0 q12.5 -8 25 0 q12.5 -8 25 0" fill="none" stroke="#b05a72" stroke-width="3" opacity="0.35"/>
+    <path d="M0 248 q12.5 -8 25 0 q12.5 -8 25 0 q12.5 -8 25 0 q12.5 -8 25 0 q12.5 -8 25 0 q12.5 -8 25 0 q12.5 -8 25 0 q12.5 -8 25 0 q12.5 -8 25 0 q12.5 -8 25 0 q12.5 -8 25 0 q12.5 -8 25 0 q12.5 -8 25 0" fill="none" stroke="#b05a72" stroke-width="3" opacity="0.35"/>
+    <path d="M214.5 39.5h10.5M219.8 34.3v10.5" stroke="#d98a9c" stroke-width="2.2" opacity="0.72"/>
+    <path d="M215.9 214.5h8.7M220.2 210.1v8.7" stroke="#7a95a8" stroke-width="2.2" opacity="0.79"/>
+    <path d="M96.7 21.3h10.6M102.0 16.0v10.6" stroke="#d98a9c" stroke-width="2.2" opacity="0.67"/>
+    <circle cx="54.9" cy="12.8" r="3.6" fill="none" stroke="#b05a72" stroke-width="2" opacity="0.45"/>
+    <path d="M130.9 12.8l6.5 11.0h-13.0z" fill="#b05a72" opacity="0.72"/>
+    <circle cx="45.4" cy="67.2" r="2.8" fill="#7a95a8" opacity="0.63"/>
+    <circle cx="197.1" cy="26.3" r="5.9" fill="#e8b13a" opacity="0.45"/>
+    <path d="M140.9 41.4l4.1 6.9h-8.1z" fill="#d98a9c" opacity="0.62"/>
+    <circle cx="255.5" cy="175.5" r="5.8" fill="#b05a72" opacity="0.70"/>
+    <circle cx="274.5" cy="188.3" r="6.7" fill="#7a95a8" opacity="0.57"/>
+    <path d="M44.4 279.7h12.0M50.4 273.7v12.0" stroke="#e8b13a" stroke-width="2.2" opacity="0.65"/>
+    <circle cx="74.6" cy="287.6" r="6.6" fill="#b05a72" opacity="0.45"/>
+    <path d="M254.4 174.1h11.7M260.2 168.3v11.7" stroke="#7a95a8" stroke-width="2.2" opacity="0.63"/>
+    <circle cx="42.7" cy="189.7" r="6.1" fill="#e8b13a" opacity="0.45"/>
+    <path d="M19.2 137.2h9.0M23.7 132.7v9.0" stroke="#7a95a8" stroke-width="2.2" opacity="0.59"/>
+    <path d="M94.0 246.3l7.0 11.9h-14.0z" fill="#b05a72" opacity="0.77"/>
+    <path d="M252.7 144.3h7.6M256.5 140.5v7.6" stroke="#d98a9c" stroke-width="2.2" opacity="0.35"/>
+    <path d="M161.6 43.3l5.5 9.3h-10.9z" fill="#b05a72" opacity="0.58"/>
+    <path d="M209.3 224.7h7.0M212.8 221.2v7.0" stroke="#b05a72" stroke-width="2.2" opacity="0.61"/>
+    <circle cx="253.7" cy="91.5" r="6.5" fill="#e8b13a" opacity="0.52"/>
+    <circle cx="242.4" cy="77.8" r="4.9" fill="#e8b13a" opacity="0.37"/>
+    <path d="M47.3 101.6l3.9 6.7h-7.9z" fill="#d98a9c" opacity="0.74"/>
+    <path d="M41.8 128.0l2.7 4.6h-5.4z" fill="#7a95a8" opacity="0.52"/>
+    <path d="M86.7 238.8h6.7M90.1 235.5v6.7" stroke="#b05a72" stroke-width="2.2" opacity="0.58"/>
+    <circle cx="117.1" cy="14.6" r="5.5" fill="#d98a9c" opacity="0.41"/>
+    <path d="M260.2 123.8l2.7 4.5h-5.3z" fill="#b05a72" opacity="0.53"/>
+  </g>
+  <g transform="translate(150 150)">
+
+    <path d="M0 52 l-56 -58 a56 56 0 0 1 112 0 z" fill="#f2b6c1" stroke="#b05a72" stroke-width="4"/>
+    <g stroke="#b05a72" stroke-width="3" fill="none">
+      <path d="M0 52 L-40 -32 M0 52 L-20 -48 M0 52 L0 -54 M0 52 L20 -48 M0 52 L40 -32"/>
+      <path d="M-48 -22 q48 -26 96 0" opacity="0.6"/>
+      <path d="M-38 -40 q38 -18 76 0" opacity="0.45"/>
+    </g>
+    <path d="M-12 52 h24 l-4 10 h-16 z" fill="#d98a9c" stroke="#b05a72" stroke-width="3"/>
+    <circle cx="0" cy="24" r="10" fill="#fdfdf6" stroke="#c9b8a0" stroke-width="3"/>
+    <circle cx="-3" cy="21" r="3" fill="#fff"/>
+    <path d="M-62 70 q10 -7 20 0 M42 70 q10 -7 20 0" stroke="#7a95a8" stroke-width="3" fill="none"/>
+  </g>
+  
+    <rect x="6" y="6" width="288" height="288" rx="18" fill="none" stroke="#b05a72" stroke-width="4"/>
+    <rect x="13" y="13" width="274" height="274" rx="12" fill="none" stroke="#b05a72" stroke-width="1.5" opacity="0.5" stroke-dasharray="7 5"/>
+  
+    <g text-anchor="middle" font-family="sans-serif">
+      <text x="150" y="272" font-size="21" font-weight="bold" fill="#b05a72">محارة</text>
+      <text x="150" y="288" font-size="10" letter-spacing="3" fill="#b05a72" opacity="0.75">SEASHELL</text>
+    </g>
+  <!-- shell -->
+</svg>

@@ -1,0 +1,9 @@
+{
+  "sets": [
+    {
+      "setId": "beach-day",
+      "name": { "ar": "يوم في الشاطئ", "en": "Beach Day" },
+      "themeColor": "#2f9fd8"
+    }
+  ]
+}

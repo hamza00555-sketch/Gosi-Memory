@@ -1,0 +1,6 @@
+{
+  "name": "canvas",
+  "version": "3.0.0",
+  "description": "Empty stub: mind-ar only needs node-canvas for Node.js usage; this browser app never imports it.",
+  "main": "index.js"
+}

@@ -1,0 +1,76 @@
+{
+  "setId": "beach-day",
+  "name": { "ar": "يوم في الشاطئ", "en": "Beach Day" },
+  "description": {
+    "ar": "ثماني أزواج من بطاقات الشاطئ: مجسمات مرحة تظهر فوق البطاقات المطبوعة.",
+    "en": "Eight pairs of beach cards: playful 3D objects appear over the printed cards."
+  },
+  "themeColor": "#2f9fd8",
+  "mindFile": "targets.mind",
+  "pairs": [
+    {
+      "pairId": "crab",
+      "name": { "ar": "سلطعون", "en": "Crab" },
+      "faceImage": "faces/crab.svg",
+      "targetIndex": 0,
+      "object": { "kind": "model", "src": "objects/crab.glb", "scale": 0.85, "yOffset": 0.18, "spin": 0.6 },
+      "sound": "sounds/crab.wav"
+    },
+    {
+      "pairId": "palm",
+      "name": { "ar": "نخلة", "en": "Palm tree" },
+      "faceImage": "faces/palm.svg",
+      "targetIndex": 1,
+      "object": { "kind": "model", "src": "objects/palm.glb", "scale": 0.8, "yOffset": 0.1, "spin": 0.5 },
+      "sound": "sounds/palm.wav"
+    },
+    {
+      "pairId": "ball",
+      "name": { "ar": "كرة شاطئ", "en": "Beach ball" },
+      "faceImage": "faces/ball.svg",
+      "targetIndex": 2,
+      "object": { "kind": "model", "src": "objects/ball.glb", "scale": 0.85, "yOffset": 0.15, "spin": 1.2 },
+      "sound": "sounds/ball.wav"
+    },
+    {
+      "pairId": "boat",
+      "name": { "ar": "مركب شراعي", "en": "Sailboat" },
+      "faceImage": "faces/boat.svg",
+      "targetIndex": 3,
+      "object": { "kind": "model", "src": "objects/boat.glb", "scale": 0.85, "yOffset": 0.12, "spin": 0.5 },
+      "sound": "sounds/boat.wav"
+    },
+    {
+      "pairId": "sun",
+      "name": { "ar": "شمس", "en": "Sun" },
+      "faceImage": "faces/sun.svg",
+      "targetIndex": 4,
+      "object": { "kind": "model", "src": "objects/sun.glb", "scale": 0.8, "yOffset": 0.3, "spin": 0.8 },
+      "sound": "sounds/sun.wav"
+    },
+    {
+      "pairId": "shell",
+      "name": { "ar": "محارة", "en": "Seashell" },
+      "faceImage": "faces/shell.svg",
+      "targetIndex": 5,
+      "object": { "kind": "model", "src": "objects/shell.glb", "scale": 0.85, "yOffset": 0.12, "spin": 0.6 },
+      "sound": "sounds/shell.wav"
+    },
+    {
+      "pairId": "seagull",
+      "name": { "ar": "نورس", "en": "Seagull" },
+      "faceImage": "faces/seagull.svg",
+      "targetIndex": 6,
+      "object": { "kind": "model", "src": "objects/seagull.glb", "scale": 0.8, "yOffset": 0.35, "spin": 0.7 },
+      "sound": "sounds/seagull.wav"
+    },
+    {
+      "pairId": "icecream",
+      "name": { "ar": "مثلجات", "en": "Ice cream" },
+      "faceImage": "faces/icecream.svg",
+      "targetIndex": 7,
+      "object": { "kind": "model", "src": "objects/icecream.glb", "scale": 0.8, "yOffset": 0.12, "spin": 0.6 },
+      "sound": "sounds/icecream.wav"
+    }
+  ]
+}
