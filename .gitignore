@@ -9,3 +9,6 @@ dist-ssr
 coverage
 *.log
 .vite
+
+# TypeScript incremental build metadata — machine-local, not source.
+*.tsbuildinfo
