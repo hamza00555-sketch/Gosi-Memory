@@ -99,8 +99,8 @@ export default function TeamSetupScreen(): JSX.Element {
     >
       <div className="flex flex-col gap-5 px-5">
         {isHost && (
-          <div className="panel flex flex-col items-center gap-2">
-            <p className="text-sm text-cream/60">{ar.lobby.shareCode}</p>
+          <div className="panel flex flex-col items-center">
+            {/* CodeDisplay renders its own caption — do not repeat it here. */}
             <CodeDisplay code={room.code} />
           </div>
         )}
