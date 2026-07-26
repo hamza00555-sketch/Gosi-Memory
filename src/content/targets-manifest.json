@@ -1,0 +1,21 @@
+{
+  "packId": "qawsi_core_v1",
+  "mindFile": "/ar/targets/qawsi-cards.mind",
+  "comment": "targetIndex MUST equal the image order passed to the MindAR compiler. See docs/AR-TARGETS.md before editing.",
+  "targets": [
+    { "targetIndex": 0, "targetId": "card_01_a", "pairId": "pair_01", "targetImage": "/ar/targets/source/card_01_a.jpg" },
+    { "targetIndex": 1, "targetId": "card_01_b", "pairId": "pair_01", "targetImage": "/ar/targets/source/card_01_b.jpg" },
+    { "targetIndex": 2, "targetId": "card_02_a", "pairId": "pair_02", "targetImage": "/ar/targets/source/card_02_a.jpg" },
+    { "targetIndex": 3, "targetId": "card_02_b", "pairId": "pair_02", "targetImage": "/ar/targets/source/card_02_b.jpg" },
+    { "targetIndex": 4, "targetId": "card_03_a", "pairId": "pair_03", "targetImage": "/ar/targets/source/card_03_a.jpg" },
+    { "targetIndex": 5, "targetId": "card_03_b", "pairId": "pair_03", "targetImage": "/ar/targets/source/card_03_b.jpg" },
+    { "targetIndex": 6, "targetId": "card_04_a", "pairId": "pair_04", "targetImage": "/ar/targets/source/card_04_a.jpg" },
+    { "targetIndex": 7, "targetId": "card_04_b", "pairId": "pair_04", "targetImage": "/ar/targets/source/card_04_b.jpg" },
+    { "targetIndex": 8, "targetId": "card_05_a", "pairId": "pair_05", "targetImage": "/ar/targets/source/card_05_a.jpg" },
+    { "targetIndex": 9, "targetId": "card_05_b", "pairId": "pair_05", "targetImage": "/ar/targets/source/card_05_b.jpg" },
+    { "targetIndex": 10, "targetId": "card_06_a", "pairId": "pair_06", "targetImage": "/ar/targets/source/card_06_a.jpg" },
+    { "targetIndex": 11, "targetId": "card_06_b", "pairId": "pair_06", "targetImage": "/ar/targets/source/card_06_b.jpg" },
+    { "targetIndex": 12, "targetId": "card_07_a", "pairId": "pair_07", "targetImage": "/ar/targets/source/card_07_a.jpg" },
+    { "targetIndex": 13, "targetId": "card_07_b", "pairId": "pair_07", "targetImage": "/ar/targets/source/card_07_b.jpg" }
+  ]
+}

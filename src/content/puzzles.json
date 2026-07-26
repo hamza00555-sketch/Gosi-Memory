@@ -1,0 +1,52 @@
+{
+  "puzzles": [
+    {
+      "id": "pz_majlis",
+      "prompt": "ما المكان الذي تكشفه الصورة؟",
+      "image": "/puzzles/majlis.webp",
+      "pieceCount": 9,
+      "options": ["مجلس عربي", "مطار", "ملعب", "مكتبة"],
+      "correctAnswer": 0
+    },
+    {
+      "id": "pz_falcon",
+      "prompt": "ما المخلوق المختبئ خلف القطع؟",
+      "image": "/puzzles/falcon.webp",
+      "pieceCount": 9,
+      "options": ["حصان", "صقر", "جمل", "غزال"],
+      "correctAnswer": 1
+    },
+    {
+      "id": "pz_coffee",
+      "prompt": "ما الطقس اليومي الظاهر في الصورة؟",
+      "image": "/puzzles/coffee.webp",
+      "pieceCount": 12,
+      "options": ["اجتماع", "قهوة الصباح", "رحلة", "تمرين"],
+      "correctAnswer": 1
+    },
+    {
+      "id": "pz_desert",
+      "prompt": "أين التُقطت هذه الصورة؟",
+      "image": "/puzzles/desert.webp",
+      "pieceCount": 12,
+      "options": ["الصحراء", "الشاطئ", "الجبل", "المدينة"],
+      "correctAnswer": 0
+    },
+    {
+      "id": "pz_office",
+      "prompt": "ما المشهد الذي تتكشف قطعه؟",
+      "image": "/puzzles/office.webp",
+      "pieceCount": 9,
+      "options": ["حفل تخرج", "يوم عمل", "سوق", "مباراة"],
+      "correctAnswer": 1
+    },
+    {
+      "id": "pz_oud",
+      "prompt": "ما الشيء الذي تكوّنه القطع؟",
+      "image": "/puzzles/oud.webp",
+      "pieceCount": 9,
+      "options": ["مبخرة", "ساعة", "مفتاح", "كتاب"],
+      "correctAnswer": 0
+    }
+  ]
+}

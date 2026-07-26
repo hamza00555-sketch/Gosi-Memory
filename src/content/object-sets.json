@@ -1,0 +1,506 @@
+{
+  "sets": [
+    {
+      "id": "default_set",
+      "name": "المجموعة الأساسية",
+      "isDefault": true,
+      "isPurchasable": false,
+      "futurePrice": 0,
+      "unlockSource": "free",
+      "previewImage": "/ar/sets/default/preview.webp",
+      "objects": {
+        "card_01_a": {
+          "modelPath": "/ar/sets/default/card_01_a.glb",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "position": [
+            0,
+            0,
+            0.06
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "revealClip": "Reveal",
+          "idleClip": "Idle",
+          "matchClip": "Match",
+          "mismatchClip": "Mismatch",
+          "placeholderShape": "prism",
+          "placeholderColor": "#FF6B5B"
+        },
+        "card_01_b": {
+          "modelPath": "/ar/sets/default/card_01_b.glb",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "position": [
+            0,
+            0,
+            0.06
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "revealClip": "Reveal",
+          "idleClip": "Idle",
+          "matchClip": "Match",
+          "mismatchClip": "Mismatch",
+          "placeholderShape": "orb",
+          "placeholderColor": "#FF6B5B"
+        },
+        "card_02_a": {
+          "modelPath": "/ar/sets/default/card_02_a.glb",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "position": [
+            0,
+            0,
+            0.06
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "revealClip": "Reveal",
+          "idleClip": "Idle",
+          "matchClip": "Match",
+          "mismatchClip": "Mismatch",
+          "placeholderShape": "ring",
+          "placeholderColor": "#7C5CFF"
+        },
+        "card_02_b": {
+          "modelPath": "/ar/sets/default/card_02_b.glb",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "position": [
+            0,
+            0,
+            0.06
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "revealClip": "Reveal",
+          "idleClip": "Idle",
+          "matchClip": "Match",
+          "mismatchClip": "Mismatch",
+          "placeholderShape": "cube",
+          "placeholderColor": "#7C5CFF"
+        },
+        "card_03_a": {
+          "modelPath": "/ar/sets/default/card_03_a.glb",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "position": [
+            0,
+            0,
+            0.06
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "revealClip": "Reveal",
+          "idleClip": "Idle",
+          "matchClip": "Match",
+          "mismatchClip": "Mismatch",
+          "placeholderShape": "prism",
+          "placeholderColor": "#28D6A0"
+        },
+        "card_03_b": {
+          "modelPath": "/ar/sets/default/card_03_b.glb",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "position": [
+            0,
+            0,
+            0.06
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "revealClip": "Reveal",
+          "idleClip": "Idle",
+          "matchClip": "Match",
+          "mismatchClip": "Mismatch",
+          "placeholderShape": "orb",
+          "placeholderColor": "#28D6A0"
+        },
+        "card_04_a": {
+          "modelPath": "/ar/sets/default/card_04_a.glb",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "position": [
+            0,
+            0,
+            0.06
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "revealClip": "Reveal",
+          "idleClip": "Idle",
+          "matchClip": "Match",
+          "mismatchClip": "Mismatch",
+          "placeholderShape": "ring",
+          "placeholderColor": "#FFC24B"
+        },
+        "card_04_b": {
+          "modelPath": "/ar/sets/default/card_04_b.glb",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "position": [
+            0,
+            0,
+            0.06
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "revealClip": "Reveal",
+          "idleClip": "Idle",
+          "matchClip": "Match",
+          "mismatchClip": "Mismatch",
+          "placeholderShape": "cube",
+          "placeholderColor": "#FFC24B"
+        },
+        "card_05_a": {
+          "modelPath": "/ar/sets/default/card_05_a.glb",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "position": [
+            0,
+            0,
+            0.06
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "revealClip": "Reveal",
+          "idleClip": "Idle",
+          "matchClip": "Match",
+          "mismatchClip": "Mismatch",
+          "placeholderShape": "prism",
+          "placeholderColor": "#4BA3FF"
+        },
+        "card_05_b": {
+          "modelPath": "/ar/sets/default/card_05_b.glb",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "position": [
+            0,
+            0,
+            0.06
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "revealClip": "Reveal",
+          "idleClip": "Idle",
+          "matchClip": "Match",
+          "mismatchClip": "Mismatch",
+          "placeholderShape": "orb",
+          "placeholderColor": "#4BA3FF"
+        },
+        "card_06_a": {
+          "modelPath": "/ar/sets/default/card_06_a.glb",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "position": [
+            0,
+            0,
+            0.06
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "revealClip": "Reveal",
+          "idleClip": "Idle",
+          "matchClip": "Match",
+          "mismatchClip": "Mismatch",
+          "placeholderShape": "ring",
+          "placeholderColor": "#FF8FD0"
+        },
+        "card_06_b": {
+          "modelPath": "/ar/sets/default/card_06_b.glb",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "position": [
+            0,
+            0,
+            0.06
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "revealClip": "Reveal",
+          "idleClip": "Idle",
+          "matchClip": "Match",
+          "mismatchClip": "Mismatch",
+          "placeholderShape": "cube",
+          "placeholderColor": "#FF8FD0"
+        },
+        "card_07_a": {
+          "modelPath": "/ar/sets/default/card_07_a.glb",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "position": [
+            0,
+            0,
+            0.06
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "revealClip": "Reveal",
+          "idleClip": "Idle",
+          "matchClip": "Match",
+          "mismatchClip": "Mismatch",
+          "placeholderShape": "prism",
+          "placeholderColor": "#9AE66E"
+        },
+        "card_07_b": {
+          "modelPath": "/ar/sets/default/card_07_b.glb",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "position": [
+            0,
+            0,
+            0.06
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "revealClip": "Reveal",
+          "idleClip": "Idle",
+          "matchClip": "Match",
+          "mismatchClip": "Mismatch",
+          "placeholderShape": "orb",
+          "placeholderColor": "#9AE66E"
+        }
+      }
+    },
+    {
+      "id": "office_chaos_set",
+      "name": "فوضى المكتب",
+      "isDefault": false,
+      "isPurchasable": true,
+      "futurePrice": 1200,
+      "unlockSource": "dev",
+      "previewImage": "/ar/sets/office-chaos/preview.webp",
+      "objects": {
+        "card_01_a": {
+          "modelPath": "/ar/sets/office-chaos/card_01_a.glb",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "position": [
+            0,
+            0,
+            0.06
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "revealClip": "Reveal",
+          "idleClip": "Idle",
+          "matchClip": "Match",
+          "mismatchClip": "Mismatch",
+          "placeholderShape": "prism",
+          "placeholderColor": "#FFD166"
+        },
+        "card_01_b": {
+          "modelPath": "/ar/sets/office-chaos/card_01_b.glb",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "position": [
+            0,
+            0,
+            0.06
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "revealClip": "Reveal",
+          "idleClip": "Idle",
+          "matchClip": "Match",
+          "mismatchClip": "Mismatch",
+          "placeholderShape": "orb",
+          "placeholderColor": "#FFD166"
+        },
+        "card_02_a": {
+          "modelPath": "/ar/sets/office-chaos/card_02_a.glb",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "position": [
+            0,
+            0,
+            0.06
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "revealClip": "Reveal",
+          "idleClip": "Idle",
+          "matchClip": "Match",
+          "mismatchClip": "Mismatch",
+          "placeholderShape": "ring",
+          "placeholderColor": "#EF476F"
+        },
+        "card_02_b": {
+          "modelPath": "/ar/sets/office-chaos/card_02_b.glb",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "position": [
+            0,
+            0,
+            0.06
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "revealClip": "Reveal",
+          "idleClip": "Idle",
+          "matchClip": "Match",
+          "mismatchClip": "Mismatch",
+          "placeholderShape": "cube",
+          "placeholderColor": "#EF476F"
+        },
+        "card_03_a": {
+          "modelPath": "/ar/sets/office-chaos/card_03_a.glb",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "position": [
+            0,
+            0,
+            0.06
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "revealClip": "Reveal",
+          "idleClip": "Idle",
+          "matchClip": "Match",
+          "mismatchClip": "Mismatch",
+          "placeholderShape": "prism",
+          "placeholderColor": "#06D6A0"
+        },
+        "card_03_b": {
+          "modelPath": "/ar/sets/office-chaos/card_03_b.glb",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "position": [
+            0,
+            0,
+            0.06
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "revealClip": "Reveal",
+          "idleClip": "Idle",
+          "matchClip": "Match",
+          "mismatchClip": "Mismatch",
+          "placeholderShape": "orb",
+          "placeholderColor": "#06D6A0"
+        }
+      }
+    }
+  ]
+}

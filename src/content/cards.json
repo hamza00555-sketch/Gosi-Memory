@@ -1,0 +1,25 @@
+{
+  "packId": "qawsi_core_v1",
+  "cards": [
+    { "targetId": "card_01_a", "pairId": "pair_01", "side": "a", "name": "الدلة", "description": "دلة القهوة العربية." },
+    { "targetId": "card_01_b", "pairId": "pair_01", "side": "b", "name": "الفنجان", "description": "فنجان القهوة الذي يكمل الدلة." },
+
+    { "targetId": "card_02_a", "pairId": "pair_02", "side": "a", "name": "الصقر", "description": "الصقر محلقًا." },
+    { "targetId": "card_02_b", "pairId": "pair_02", "side": "b", "name": "الريشة", "description": "ريشة الصقر." },
+
+    { "targetId": "card_03_a", "pairId": "pair_03", "side": "a", "name": "النخلة", "description": "نخلة باسقة." },
+    { "targetId": "card_03_b", "pairId": "pair_03", "side": "b", "name": "التمر", "description": "طبق التمر." },
+
+    { "targetId": "card_04_a", "pairId": "pair_04", "side": "a", "name": "الموظف", "description": "زميل العمل." },
+    { "targetId": "card_04_b", "pairId": "pair_04", "side": "b", "name": "البطاقة", "description": "بطاقة الدخول." },
+
+    { "targetId": "card_05_a", "pairId": "pair_05", "side": "a", "name": "العود", "description": "قطعة عود." },
+    { "targetId": "card_05_b", "pairId": "pair_05", "side": "b", "name": "المبخرة", "description": "المبخرة التي تحرق العود." },
+
+    { "targetId": "card_06_a", "pairId": "pair_06", "side": "a", "name": "الساعة", "description": "عقارب الساعة." },
+    { "targetId": "card_06_b", "pairId": "pair_06", "side": "b", "name": "الموعد", "description": "التقويم والموعد." },
+
+    { "targetId": "card_07_a", "pairId": "pair_07", "side": "a", "name": "المفتاح", "description": "مفتاح معدني." },
+    { "targetId": "card_07_b", "pairId": "pair_07", "side": "b", "name": "القفل", "description": "القفل الذي يفتحه المفتاح." }
+  ]
+}

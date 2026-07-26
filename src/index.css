@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Tajawal:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;900&family=Tajawal:wght@400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,11 @@
 
 @layer base {
   :root {
-    color-scheme: dark;
+    /* Read once here so components never repeat the env() dance. */
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+    --safe-left: env(safe-area-inset-left, 0px);
+    --safe-right: env(safe-area-inset-right, 0px);
   }
 
   html,
@@ -16,47 +20,98 @@
   }
 
   body {
-    margin: 0;
-    background-color: theme('colors.navy.950');
-    color: #e6edf7;
-    font-family: theme('fontFamily.body');
-    -webkit-font-smoothing: antialiased;
+    @apply bg-ink-950 font-body text-cream antialiased;
+    /* The match runs on a fixed, camera-filled canvas: no rubber-banding, no
+       accidental pan or pinch-zoom while players wave a phone at a table. */
     overscroll-behavior: none;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 
-  /* Mobile-first app frame: center a phone-width column on larger screens. */
-  #root {
-    display: flex;
-    justify-content: center;
+  /* Locked only during a match — menus still need to scroll. */
+  body[data-lock-viewport='true'] {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    touch-action: none;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display font-black;
+  }
+
+  button {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
 @layer components {
-  .app-shell {
-    @apply relative flex h-full w-full max-w-md flex-col bg-navy-950;
-  }
-
-  .glass {
-    @apply border border-white/10 bg-white/5 backdrop-blur-md;
-  }
-
-  .hud-panel {
-    @apply rounded-2xl border border-hud-line bg-navy-900/70 backdrop-blur-md;
-  }
-
+  /* Chunky party buttons: a hard bottom shadow that collapses on press reads as
+     physical depth without any 3D transform cost. */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 font-display font-bold transition active:scale-[0.98] disabled:opacity-40;
+    @apply inline-flex select-none items-center justify-center gap-2 rounded-chunk px-6 py-4
+           font-display text-lg font-bold shadow-chunk transition-all duration-100
+           active:translate-y-1 active:shadow-chunk-sm disabled:opacity-40
+           disabled:shadow-chunk-sm disabled:active:translate-y-0;
   }
-
   .btn-primary {
-    @apply btn bg-gradient-to-l from-brand-blue to-brand-cyan text-navy-950 shadow-glow;
+    @apply btn bg-pop-yellow text-ink-950;
   }
-
-  .btn-success {
-    @apply btn bg-gradient-to-l from-brand-emerald to-brand-green text-navy-950 shadow-glow-green;
+  .btn-secondary {
+    @apply btn bg-ink-700 text-cream;
   }
-
   .btn-ghost {
-    @apply btn border border-white/15 bg-white/5 text-white;
+    @apply btn bg-white/10 text-cream shadow-none backdrop-blur-sm active:translate-y-0;
+  }
+  .btn-danger {
+    @apply btn bg-bad text-cream;
+  }
+
+  .panel {
+    @apply rounded-chunk bg-ink-900/95 p-5 shadow-lift;
+  }
+
+  /* Readable over live camera without a heavy frosted-glass slab. */
+  .hud-chip {
+    @apply rounded-pill bg-ink-950/75 px-3 py-1.5 text-sm font-bold backdrop-blur-md;
+  }
+
+  .screen {
+    @apply flex min-h-full flex-col;
+    padding-top: var(--safe-top);
+    padding-bottom: var(--safe-bottom);
+    padding-left: var(--safe-left);
+    padding-right: var(--safe-right);
+  }
+
+  .field {
+    @apply w-full rounded-chunk bg-ink-800 px-4 py-3.5 font-body text-lg text-cream
+           outline-none ring-2 ring-transparent transition focus:ring-pop-yellow
+           placeholder:text-cream/35;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  /* Latin digits inside an RTL paragraph otherwise reorder unpredictably. */
+  .nums {
+    direction: ltr;
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
   }
 }

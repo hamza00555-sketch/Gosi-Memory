@@ -1,4 +1,0 @@
-# The shared engine is linked here before deploying Edge Functions:
-#   ln -s ../../../src/core supabase/functions/_shared/core
-# This lets game-action reuse the EXACT same engine as the client (no rule
-# duplication). Keep src/core framework-free so it bundles cleanly in Deno.

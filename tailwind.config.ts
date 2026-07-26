@@ -1,56 +1,96 @@
 import type { Config } from 'tailwindcss';
 
 /**
- * QAWSI design tokens.
- * Premium futuristic, corporate-friendly: deep navy base, blue/green accents,
- * subtle purple highlights. Mobile-first; all spacing scales from a small base.
+ * Party-game palette.
+ *
+ * The camera is the backdrop on the main screen, so surfaces are warm ink
+ * rather than the old cyber navy, and every chip that sits over live video
+ * carries enough contrast to stay legible against a bright table.
  */
 export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
     extend: {
       colors: {
-        navy: {
-          950: '#070b1a',
-          900: '#0b1124',
-          800: '#111a33',
-          700: '#1a2747',
-          600: '#243561',
+        ink: {
+          950: '#0B0A10',
+          900: '#141220',
+          800: '#1E1B2E',
+          700: '#2A2540',
+          600: '#3A3355',
+          500: '#4E4670',
         },
-        brand: {
-          blue: '#3b82f6',
-          cyan: '#22d3ee',
-          green: '#22c55e',
-          emerald: '#10b981',
-          purple: '#8b5cf6',
+        cream: '#FFF6EC',
+        team: {
+          coral: '#FF5F57',
+          'coral-soft': '#FF9A94',
+          violet: '#8B5CF6',
+          'violet-soft': '#BFA3FF',
+          lime: '#57E08A',
+          'lime-soft': '#9BF0BB',
+          amber: '#FFB020',
+          'amber-soft': '#FFD27A',
         },
-        hud: {
-          line: 'rgba(34, 211, 238, 0.35)',
-          glow: 'rgba(59, 130, 246, 0.45)',
+        pop: {
+          yellow: '#FFD84D',
+          pink: '#FF5FA2',
+          mint: '#3DE0C0',
+          sky: '#54B8FF',
         },
+        good: '#28D6A0',
+        bad: '#FF4D6D',
       },
       fontFamily: {
-        // System Arabic-friendly stack; swap for a hosted font later.
-        display: ['"Cairo"', '"Tajawal"', 'system-ui', 'sans-serif'],
-        body: ['"Tajawal"', 'system-ui', 'sans-serif'],
+        display: ['Cairo', 'Tajawal', 'system-ui', 'sans-serif'],
+        body: ['Tajawal', 'Cairo', 'system-ui', 'sans-serif'],
+      },
+      borderRadius: {
+        chunk: '1.5rem',
+        pill: '999px',
       },
       boxShadow: {
-        glow: '0 0 24px rgba(59, 130, 246, 0.35)',
-        'glow-green': '0 0 24px rgba(34, 197, 94, 0.35)',
+        chunk: '0 6px 0 0 rgba(0,0,0,0.35)',
+        'chunk-sm': '0 4px 0 0 rgba(0,0,0,0.3)',
+        lift: '0 12px 40px -8px rgba(0,0,0,0.6)',
       },
       keyframes: {
-        'pulse-ring': {
-          '0%, 100%': { opacity: '0.6', transform: 'scale(1)' },
-          '50%': { opacity: '1', transform: 'scale(1.03)' },
+        'pop-in': {
+          '0%': { transform: 'scale(0.7)', opacity: '0' },
+          '60%': { transform: 'scale(1.08)', opacity: '1' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
         },
-        'flip-in': {
-          '0%': { transform: 'rotateY(90deg)', opacity: '0' },
-          '100%': { transform: 'rotateY(0deg)', opacity: '1' },
+        squash: {
+          '0%,100%': { transform: 'scale(1,1)' },
+          '40%': { transform: 'scale(1.12,0.88)' },
+          '70%': { transform: 'scale(0.95,1.05)' },
+        },
+        'slide-up': {
+          '0%': { transform: 'translateY(24px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        'pulse-ring': {
+          '0%': { boxShadow: '0 0 0 0 currentColor', opacity: '0.9' },
+          '100%': { boxShadow: '0 0 0 18px transparent', opacity: '0' },
+        },
+        shake: {
+          '0%,100%': { transform: 'translateX(0)' },
+          '20%': { transform: 'translateX(-8px)' },
+          '40%': { transform: 'translateX(8px)' },
+          '60%': { transform: 'translateX(-5px)' },
+          '80%': { transform: 'translateX(5px)' },
+        },
+        'scan-sweep': {
+          '0%': { transform: 'translateY(-110%)' },
+          '100%': { transform: 'translateY(110%)' },
         },
       },
       animation: {
-        'pulse-ring': 'pulse-ring 2s ease-in-out infinite',
-        'flip-in': 'flip-in 0.25s ease-out',
+        'pop-in': 'pop-in 320ms cubic-bezier(0.34,1.56,0.64,1) both',
+        squash: 'squash 420ms cubic-bezier(0.34,1.56,0.64,1)',
+        'slide-up': 'slide-up 280ms cubic-bezier(0.22,1,0.36,1) both',
+        'pulse-ring': 'pulse-ring 1.4s ease-out infinite',
+        shake: 'shake 420ms ease-in-out',
+        'scan-sweep': 'scan-sweep 2.4s linear infinite',
       },
     },
   },

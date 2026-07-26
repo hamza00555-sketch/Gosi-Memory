@@ -1,0 +1,13 @@
+{
+  "packId": "qawsi_core_v1",
+  "name": "الحزمة الأساسية",
+  "pairs": [
+    { "pairId": "pair_01", "name": "الدلة وفنجانها", "targetIds": ["card_01_a", "card_01_b"] },
+    { "pairId": "pair_02", "name": "الصقر وريشته", "targetIds": ["card_02_a", "card_02_b"] },
+    { "pairId": "pair_03", "name": "النخلة وتمرها", "targetIds": ["card_03_a", "card_03_b"] },
+    { "pairId": "pair_04", "name": "الموظف وبطاقته", "targetIds": ["card_04_a", "card_04_b"] },
+    { "pairId": "pair_05", "name": "العود وعطره", "targetIds": ["card_05_a", "card_05_b"] },
+    { "pairId": "pair_06", "name": "الساعة وموعدها", "targetIds": ["card_06_a", "card_06_b"] },
+    { "pairId": "pair_07", "name": "المفتاح وقفله", "targetIds": ["card_07_a", "card_07_b"] }
+  ]
+}

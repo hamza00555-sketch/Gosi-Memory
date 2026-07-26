@@ -1,111 +1,242 @@
 /**
- * Single source for Arabic UI strings. Centralizing them keeps copy out of
- * components and makes a future i18n layer (or tone tweaks) a one-file change.
+ * Every user-facing string. One file so copy can be reviewed as prose, and so
+ * no component ever hardcodes Arabic inline.
  */
 export const ar = {
-  appName: 'قوسي',
-  appNameLatin: 'QAWSI',
-  tagline: 'لعبة الذاكرة التنافسية لفريقك',
-
-  nav: {
-    home: 'الرئيسية',
-    store: 'المتجر',
-    missions: 'المهام',
-    profile: 'الملف',
-  },
-
-  modes: {
-    solo_ai: 'ضد الذكاء',
-    one_vs_one: '1 ضد 1',
-    two_vs_two: '2 ضد 2',
-  },
-
-  modeDesc: {
-    solo_ai: 'تدرّب ضد خصم ذكي',
-    one_vs_one: 'تحدَّ زميلًا مباشرة',
-    two_vs_two: 'فريقان يتنافسان',
-  },
-
-  lobby: {
-    start: 'ابدأ اللعب',
-    coins: 'النقاط',
-    level: 'المستوى',
-    storePreview: 'المتجر',
-    missionsPreview: 'المهام اليومية',
-    chooseMode: 'اختر نمط اللعب',
-  },
-
-  room: {
-    create: 'إنشاء غرفة',
-    join: 'انضمام بالرمز',
-    codeLabel: 'رمز الغرفة',
-    invite: 'رابط الدعوة',
-    copyInvite: 'نسخ الرابط',
-    ready: 'جاهز',
-    notReady: 'لست جاهزًا',
-    waiting: 'بانتظار اللاعبين',
-    readyStatus: 'الجميع جاهز',
-    startMatch: 'بدء المباراة',
-    host: 'المضيف',
-    players: 'اللاعبون',
-    leave: 'مغادرة',
-  },
-
-  game: {
-    yourTurn: 'دورك',
-    opponentTurn: 'دور الخصم',
-    timeLeft: 'الوقت',
-    score: 'النقاط',
-    hiddenPhrase: 'الجملة المخفية',
-    scan: 'امسح البطاقة',
-    hint: 'تلميح',
-    solve: 'حل الجملة',
-    solvePlaceholder: 'اكتب الجملة كاملة',
-    submit: 'إرسال',
-    cancel: 'إلغاء',
-    matched: 'مطابقة!',
-    missed: 'لا تطابق',
-    log: 'السجل',
-  },
-
-  results: {
-    title: 'النتيجة',
-    winner: 'الفائز',
-    draw: 'تعادل',
-    youWon: 'لقد فزت!',
-    youLost: 'حظًا أوفر',
-    scoreBreakdown: 'تفاصيل النقاط',
-    matchedPairs: 'الأزواج المطابقة',
-    phraseSolved: 'تم حل الجملة',
-    phraseUnsolved: 'لم تُحل الجملة',
-    rewards: 'المكافآت',
-    playAgain: 'العب مجددًا',
-    backHome: 'الرئيسية',
-  },
-
-  store: {
-    title: 'المتجر',
-    subtitle: 'تجميلية فقط — لا شراء للقوة',
-    owned: 'مملوك',
-    selected: 'مُختار',
-    select: 'اختيار',
-    buy: 'شراء',
-    locked: 'مقفل',
-    categories: {
-      card_skin: 'أظهر البطاقات',
-      ar_set: 'مجموعات AR',
-      match_effect: 'تأثير المطابقة',
-      victory_effect: 'تأثير الفوز',
-    },
+  app: {
+    name: 'قوسي ميموري',
+    tagline: 'بطاقات حقيقية · فريقان · جهازان',
   },
 
   common: {
-    loading: 'جارٍ التحميل…',
+    next: 'التالي',
     back: 'رجوع',
+    start: 'ابدأ',
+    confirm: 'تأكيد',
+    cancel: 'إلغاء',
     close: 'إغلاق',
+    retry: 'حاول مجددًا',
+    loading: 'جاري التحميل…',
+    ready: 'جاهز',
+    notReady: 'غير جاهز',
+    waiting: 'بانتظار…',
+    points: 'نقطة',
     you: 'أنت',
-    vs: 'ضد',
+    skip: 'تخطي',
+  },
+
+  onboarding: {
+    title: 'كيف نلعب؟',
+    steps: [
+      {
+        title: 'فريقان، جهازان',
+        body: 'كل فريق يمسك جهازًا واحدًا، وتجلسون حول نفس الطاولة وأمامكم نفس البطاقات.',
+      },
+      {
+        title: 'الكاميرا هي اللعبة',
+        body: 'لا توجد بطاقات على الشاشة. اقلب بطاقة حقيقية ووجّه الكاميرا نحوها ليظهر ما بداخلها.',
+      },
+      {
+        title: 'بطاقتان في كل دور',
+        body: 'كل لاعب يقلب بطاقتين. إذا تطابقتا يكسب فريقه ويكمل، وإن لم تتطابقا ينتقل الدور.',
+      },
+      {
+        title: 'تحديات وألغاز',
+        body: 'كل تطابق يفتح تحديًا سريعًا للفريقين، ويكشف قطعة من لغز فريقك.',
+      },
+    ],
+    cardsTitle: 'جهّز الطاولة',
+    cardsBody: 'وزّع البطاقات الأربع عشرة مقلوبة على الطاولة، وتأكد من وجود إضاءة كافية.',
+    cardsHint: 'كل بطاقتين تكوّنان زوجًا، لكن صورتيهما مختلفتان.',
+  },
+
+  lobby: {
+    title: 'ابدأ مباراة',
+    create: 'أنشئ غرفة',
+    join: 'انضم بالرمز',
+    createHint: 'أنت الفريق الأول والمضيف.',
+    joinHint: 'أدخل الرمز الظاهر على جهاز الفريق الأول.',
+    codeLabel: 'رمز الغرفة',
+    codePlaceholder: 'مثال: 4KQ9',
+    invalidCode: 'رمز غير صحيح.',
+    roomNotFound: 'لم نجد هذه الغرفة.',
+    roomFull: 'الغرفة ممتلئة.',
+    connecting: 'جاري الاتصال…',
+    shareCode: 'شارك هذا الرمز مع الفريق الآخر',
+  },
+
+  setup: {
+    teamTitle: 'إعداد الفريق',
+    teamName: 'اسم الفريق',
+    teamNamePlaceholder: 'اكتب اسم فريقك',
+    teamColor: 'لون الفريق',
+    playerCount: 'عدد اللاعبين',
+    playerCountHint: 'من لاعب واحد إلى ثلاثة.',
+    playerNames: 'أسماء اللاعبين (اختياري)',
+    playerPlaceholder: 'اللاعب',
+    objectSet: 'شكل المجسمات',
+    objectSetHint: 'لكل جهاز شكله الخاص — لا يؤثر على قواعد اللعب.',
+    targetScore: 'هدف النقاط',
+    targetScoreHint: 'أول فريق يصل يفوز.',
+    hostOnly: 'المضيف فقط يحدد هدف النقاط.',
+    waitingOtherTeam: 'بانتظار انضمام الفريق الآخر…',
+    waitingReady: 'بانتظار جاهزية الفريق الآخر…',
+    markReady: 'نحن جاهزون',
+    unready: 'تراجع',
+  },
+
+  camera: {
+    permissionTitle: 'نحتاج الكاميرا',
+    permissionBody: 'اللعبة تعمل بالكاميرا لتتعرف على بطاقاتكم الحقيقية. لا نسجل أي صورة أو فيديو.',
+    permissionCta: 'السماح بالكاميرا',
+    denied: 'تم رفض إذن الكاميرا.',
+    deniedHelp: 'افتح إعدادات المتصفح وفعّل الكاميرا لهذا الموقع، ثم أعد المحاولة.',
+    unsupported: 'هذا المتصفح لا يدعم الكاميرا.',
+    unsupportedHelp: 'جرّب Safari على iPhone أو Chrome على Android.',
+  },
+
+  preload: {
+    title: 'جاري التحضير',
+    targets: 'مكتبة البطاقات',
+    objects: 'المجسمات',
+    ready: 'كل شيء جاهز',
+    failed: 'تعذّر تحميل بعض الملفات.',
+  },
+
+  calibration: {
+    title: 'اختبر التعرف',
+    body: 'وجّه الكاميرا نحو أي بطاقة للتأكد من أن الجهاز يتعرف عليها.',
+    success: 'ممتاز! التعرف يعمل.',
+    hint: 'قرّب الجهاز قليلًا وثبّت يدك.',
+    skip: 'تخطي الاختبار',
+  },
+
+  countdown: {
+    getReady: 'استعدوا!',
+    go: 'ابدأوا!',
+  },
+
+  game: {
+    firstCard: 'اقلب البطاقة الأولى',
+    secondCard: 'اقلب البطاقة الثانية',
+    aimCamera: 'وجّه الكاميرا نحو الصورة',
+    recognized: 'تم التعرف',
+    alreadyCollected: 'هذه البطاقة تم جمعها',
+    pickDifferent: 'اختر بطاقة مختلفة',
+    notYourTurn: 'ليس دور فريقك',
+    returnCards: 'أعيدوا البطاقتين إلى مكانهما',
+    holdSteady: 'ثبت الجهاز قليلًا',
+    turnOf: 'دور',
+    slotFirst: 'الأولى',
+    slotSecond: 'الثانية',
+    empty: '—',
+    puzzleButton: 'حل اللغز',
+    puzzleLocked: 'اللغز مقفل حتى يعود دوركم',
+    help: 'مساعدة',
+    timeUp: 'انتهى الوقت!',
+    watching: 'أنت تشاهد — وجّه الكاميرا كما تشاء',
+    scanning: 'جاري البحث…',
+    tracking: 'التعرف يعمل',
+    noTracking: 'لا توجد بطاقة أمام الكاميرا',
+  },
+
+  outcome: {
+    matchTitle: 'تطابق!',
+    matchBody: 'أحسنتم — ‎+100 نقطة وقطعة جديدة من اللغز.',
+    mismatchTitle: 'ليس تطابقًا',
+    mismatchBody: 'أعيدوا البطاقتين إلى مكانهما وانتبهوا لموقعهما.',
+    turnPassed: 'الدور ينتقل للفريق الآخر',
+    turnKept: 'استمروا — دوركم مستمر',
+    timeoutTitle: 'انتهى الوقت',
+  },
+
+  challenge: {
+    title: 'تحدٍ سريع!',
+    getReady: 'استعدوا…',
+    advantage: 'لديكم أفضلية',
+    waiting: 'بانتظار الفريق الآخر…',
+    youWon: 'فزتم بالتحدي! ‎+50',
+    youLost: 'فاز الفريق الآخر بالتحدي',
+    draw: 'لا فائز في هذا التحدي',
+    tooEarly: 'مبكر جدًا!',
+    reaction: 'اضغط فور ظهور الدائرة',
+    reactionWait: 'انتظر…',
+    reactionNow: 'الآن!',
+    sequenceWatch: 'احفظ الترتيب',
+    sequenceRepeat: 'أعد الترتيب',
+    sequenceClear: 'مسح',
+    syncHold: 'المسوا كل الدوائر معًا',
+    syncHolding: 'ثبتوا…',
+    submit: 'أرسل',
+  },
+
+  puzzle: {
+    title: 'لغز فريقكم',
+    piecesRevealed: 'القطع المكشوفة',
+    guessPrompt: 'ما الجواب؟',
+    correct: 'إجابة صحيحة! ‎+200',
+    wrong: 'إجابة خاطئة ‎−50',
+    lockedNow: 'اللغز مقفل حتى يعود دوركم.',
+    newPuzzle: 'لغز جديد!',
+    solveNow: 'حل الآن',
+    later: 'لاحقًا',
+  },
+
+  round: {
+    exhaustedTitle: 'انتهت البطاقات',
+    exhaustedBody: 'لم يصل أي فريق إلى الهدف. اخلطوا البطاقات وأعيدوا توزيعها مقلوبة.',
+    confirmShuffle: 'خلطنا البطاقات',
+    waitingOther: 'بانتظار الفريق الآخر…',
+    roundLabel: 'الجولة',
+  },
+
+  results: {
+    winner: 'الفائز',
+    finalScore: 'النتيجة النهائية',
+    pairsMatched: 'الأزواج',
+    challengesWon: 'التحديات',
+    puzzlesSolved: 'الألغاز',
+    rematch: 'مباراة جديدة',
+    exit: 'خروج',
+    congrats: 'مبروك!',
+  },
+
+  connection: {
+    hostGone: 'بانتظار عودة الجهاز المضيف',
+    hostGoneBody: 'المباراة متوقفة مؤقتًا حتى يعود اتصال المضيف.',
+    otherGone: 'انقطع اتصال الفريق الآخر',
+    reconnecting: 'إعادة الاتصال…',
+    offline: 'لا يوجد اتصال بالإنترنت',
+    restored: 'عاد الاتصال',
+  },
+
+  errors: {
+    NOT_YOUR_TURN: 'ليس دور فريقك.',
+    WRONG_PHASE: 'لا يمكن فعل ذلك الآن.',
+    UNKNOWN_TARGET: 'بطاقة غير معروفة.',
+    ALREADY_MATCHED: 'هذه البطاقة تم جمعها.',
+    SAME_CARD_TWICE: 'اختر بطاقة مختلفة.',
+    LOW_CONFIDENCE: 'ثبت الجهاز قليلًا.',
+    TURN_EXPIRED: 'انتهى وقت الدور.',
+    DUPLICATE_COMMAND: 'تم تسجيل هذه الحركة.',
+    STALE_COMMAND: 'حركة قديمة.',
+    GAME_COMPLETED: 'انتهت المباراة.',
+    PUZZLE_LOCKED: 'اللغز مقفل حتى يعود دوركم.',
+    PUZZLE_ALREADY_SOLVED: 'تم حل هذا اللغز.',
+    CHALLENGE_ALREADY_SUBMITTED: 'سجلتم إجابتكم بالفعل.',
+    CHALLENGE_NOT_STARTED: 'لم يبدأ التحدي بعد.',
+    CHALLENGE_OVER: 'انتهى التحدي.',
+    TOO_MANY_PLAYERS: 'الحد الأقصى ثلاثة لاعبين لكل فريق.',
+    ROOM_FULL: 'الغرفة ممتلئة.',
+    generic: 'حدث خطأ غير متوقع.',
+    firebaseMissing: 'إعدادات Firebase غير مكتملة — اللعب بين جهازين غير مفعّل.',
+  },
+
+  dev: {
+    simulatorTitle: 'محاكي التعرف (وضع التطوير)',
+    simulatorBody: 'اضغط على أي بطاقة لمحاكاة تعرف الكاميرا عليها. غير متاح في الإنتاج.',
+    simulatorOff: 'المحاكي غير مفعّل.',
   },
 } as const;
 
-export type Strings = typeof ar;
+export type ArabicStrings = typeof ar;

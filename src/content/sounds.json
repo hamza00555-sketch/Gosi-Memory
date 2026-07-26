@@ -1,0 +1,18 @@
+{
+  "sounds": [
+    { "id": "scan_ok", "src": "/sfx/scan-ok.mp3", "volume": 0.7, "loop": false },
+    { "id": "scan_reject", "src": "/sfx/scan-reject.mp3", "volume": 0.6, "loop": false },
+    { "id": "match", "src": "/sfx/match.mp3", "volume": 0.9, "loop": false },
+    { "id": "mismatch", "src": "/sfx/mismatch.mp3", "volume": 0.8, "loop": false },
+    { "id": "challenge_start", "src": "/sfx/challenge-start.mp3", "volume": 0.8, "loop": false },
+    { "id": "challenge_win", "src": "/sfx/challenge-win.mp3", "volume": 0.9, "loop": false },
+    { "id": "challenge_lose", "src": "/sfx/challenge-lose.mp3", "volume": 0.7, "loop": false },
+    { "id": "puzzle_piece", "src": "/sfx/puzzle-piece.mp3", "volume": 0.7, "loop": false },
+    { "id": "puzzle_correct", "src": "/sfx/puzzle-correct.mp3", "volume": 0.9, "loop": false },
+    { "id": "puzzle_wrong", "src": "/sfx/puzzle-wrong.mp3", "volume": 0.7, "loop": false },
+    { "id": "countdown_tick", "src": "/sfx/tick.mp3", "volume": 0.5, "loop": false },
+    { "id": "turn_warning", "src": "/sfx/turn-warning.mp3", "volume": 0.6, "loop": false },
+    { "id": "victory", "src": "/sfx/victory.mp3", "volume": 1.0, "loop": false },
+    { "id": "music_bed", "src": "/sfx/music-bed.mp3", "volume": 0.35, "loop": true }
+  ]
+}

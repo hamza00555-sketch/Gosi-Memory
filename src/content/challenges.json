@@ -1,0 +1,92 @@
+{
+  "challenges": [
+    {
+      "id": "ch_reaction_01",
+      "type": "reaction_rush",
+      "durationMs": 12000,
+      "prompt": "اضغط فور ظهور الدائرة! الضغط المبكر يحرقك.",
+      "options": [],
+      "correctAnswer": -1,
+      "assets": [],
+      "matchTeamAdvantage": "head_start",
+      "scoreReward": 50
+    },
+    {
+      "id": "ch_reaction_02",
+      "type": "reaction_rush",
+      "durationMs": 12000,
+      "prompt": "استعد… لا تضغط قبل الإشارة.",
+      "options": [],
+      "correctAnswer": -1,
+      "assets": [],
+      "matchTeamAdvantage": "score_bonus",
+      "scoreReward": 50
+    },
+    {
+      "id": "ch_sequence_01",
+      "type": "sequence_memory",
+      "durationMs": 15000,
+      "prompt": "احفظ الترتيب ثم أعده.",
+      "options": ["نجمة", "قمر", "شمس", "برق", "قلب", "ورقة"],
+      "correctAnswer": -1,
+      "assets": [],
+      "matchTeamAdvantage": "extra_attempt",
+      "scoreReward": 50
+    },
+    {
+      "id": "ch_sequence_02",
+      "type": "sequence_memory",
+      "durationMs": 15000,
+      "prompt": "ركّز جيدًا — السلسلة أطول هذه المرة.",
+      "options": ["نجمة", "قمر", "شمس", "برق", "قلب", "ورقة"],
+      "correctAnswer": -1,
+      "assets": [],
+      "matchTeamAdvantage": "head_start",
+      "scoreReward": 50
+    },
+    {
+      "id": "ch_visual_01",
+      "type": "visual_puzzle",
+      "durationMs": 14000,
+      "prompt": "ما الذي لا ينتمي إلى المجموعة؟",
+      "options": ["دلة", "فنجان", "مفتاح", "تمر"],
+      "correctAnswer": 2,
+      "assets": [],
+      "matchTeamAdvantage": "head_start",
+      "scoreReward": 50
+    },
+    {
+      "id": "ch_visual_02",
+      "type": "visual_puzzle",
+      "durationMs": 14000,
+      "prompt": "أكمل: القهوة إلى الدلة كما التمر إلى…",
+      "options": ["الطبق", "المفتاح", "الساعة", "الريشة"],
+      "correctAnswer": 0,
+      "assets": [],
+      "matchTeamAdvantage": "extra_attempt",
+      "scoreReward": 50
+    },
+    {
+      "id": "ch_sync_01",
+      "type": "team_sync",
+      "durationMs": 12000,
+      "prompt": "المسوا جميع الدوائر في نفس اللحظة!",
+      "options": [],
+      "correctAnswer": -1,
+      "assets": [],
+      "matchTeamAdvantage": "head_start",
+      "scoreReward": 50
+    },
+    {
+      "id": "ch_sync_02",
+      "type": "team_sync",
+      "durationMs": 13000,
+      "prompt": "تعاونوا: كل لاعب يمسك دائرة، ثم اضغطوا معًا.",
+      "options": [],
+      "correctAnswer": -1,
+      "assets": [],
+      "matchTeamAdvantage": "score_bonus",
+      "scoreReward": 50
+    }
+  ]
+}
