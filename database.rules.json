@@ -6,7 +6,7 @@
     "roomCodes": {
       "$code": {
         ".read": true,
-        ".write": "auth != null && ((!data.exists() && root.child('rooms').child(newData.val()).child('hostUid').val() === auth.uid) || (data.exists() && root.child('rooms').child(data.val()).child('hostUid').val() === auth.uid))",
+        ".write": "auth != null && ((!data.exists() && root.child('rooms').child(newData.val()).child('hostUid').val() === auth.uid) || (data.exists() && root.child('rooms').child(data.val()).child('hostUid').val() === auth.uid) || (data.exists() && !newData.exists() && !root.child('rooms').child(data.val()).exists()))",
         ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length < 200"
       }
     },
