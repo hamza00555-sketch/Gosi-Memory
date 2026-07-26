@@ -1,5 +1,5 @@
 import { CARDS, PAIRS } from '../../content';
-import type { Command, Rejection } from '../../domain/commands';
+import type { Command, CommandDraft, Rejection } from '../../domain/commands';
 import type { RoomState } from '../../domain/game';
 import type { TargetId, TeamId } from '../../domain/ids';
 import { RULES } from '../rules/config';
@@ -43,7 +43,7 @@ export class Harness {
   }
 
   /** Apply a command. Returns true when accepted; records the rejection when not. */
-  dispatch(partial: Omit<Command, 'id' | 'deviceUid' | 'createdAt'>): boolean {
+  dispatch(partial: CommandDraft): boolean {
     const command = {
       ...partial,
       id: `cmd_${this.now}_${Math.floor(this.now % 100000)}_${partial.type}`,

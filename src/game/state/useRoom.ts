@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { getBackend } from '../../backend';
 import type { ConnectionStatus, PresenceState } from '../../backend/types';
-import type { Command, CommandType, Rejection } from '../../domain/commands';
+import type { Command, CommandIntent, CommandType, Rejection } from '../../domain/commands';
 import type { RoomState } from '../../domain/game';
 import type { RoomId, TeamId } from '../../domain/ids';
 import { useDeviceStore } from '../../state/deviceStore';
@@ -90,9 +90,7 @@ export function useHostAuthority(roomId: RoomId | null, isHost: boolean): void {
 }
 
 export interface CommandSender {
-  send: (
-    input: Omit<Command, 'id' | 'teamId' | 'deviceUid' | 'createdAt'> & Partial<Pick<Command, 'teamId'>>,
-  ) => Promise<void>;
+  send: (input: CommandIntent) => Promise<void>;
   /** Last refusal from the engine, for surfacing Arabic copy. */
   lastRejection: Rejection | null;
   clearRejection: () => void;

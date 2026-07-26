@@ -1,0 +1,100 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+
+    "roomCodes": {
+      "$code": {
+        ".read": true,
+        ".write": "auth != null && ((!data.exists() && root.child('rooms').child(newData.val()).child('hostUid').val() === auth.uid) || (data.exists() && root.child('rooms').child(data.val()).child('hostUid').val() === auth.uid))",
+        ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length < 200"
+      }
+    },
+
+    "profiles": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid"
+      }
+    },
+
+    "rooms": {
+      "$roomId": {
+        ".read": "auth != null && (auth.uid === data.child('hostUid').val() || auth.uid === data.child('teams/teamA/deviceUid').val() || auth.uid === data.child('teams/teamB/deviceUid').val())",
+        ".write": "auth != null && (auth.uid === data.child('hostUid').val() || (!data.exists() && auth.uid === newData.child('hostUid').val()))",
+
+        "hostUid": {
+          ".validate": "newData.isString() && (!data.exists() || data.val() === newData.val())"
+        },
+
+        "status": {
+          ".write": "auth != null && auth.uid === data.parent().child('hostUid').val()",
+          ".validate": "newData.isString() && (newData.val() === 'lobby' || newData.val() === 'in_progress' || newData.val() === 'completed')"
+        },
+
+        "game": {
+          ".write": "auth != null && auth.uid === data.parent().child('hostUid').val()",
+          "version": {
+            ".validate": "newData.isNumber() && (!data.exists() || newData.val() >= data.val())"
+          }
+        },
+
+        "challenge": {
+          ".write": "auth != null && auth.uid === data.parent().child('hostUid').val()"
+        },
+
+        "puzzles": {
+          ".write": "auth != null && auth.uid === data.parent().child('hostUid').val()"
+        },
+
+        "config": {
+          ".write": "auth != null && auth.uid === data.parent().child('hostUid').val()"
+        },
+
+        "teams": {
+          "$teamId": {
+            ".write": "auth != null && ($teamId === 'teamA' || $teamId === 'teamB') && (data.child('deviceUid').val() === auth.uid || (!data.child('deviceUid').exists() && newData.child('deviceUid').val() === auth.uid) || root.child('rooms').child($roomId).child('hostUid').val() === auth.uid)",
+            "deviceUid": {
+              ".validate": "!newData.exists() || (newData.isString() && newData.val().length > 0)"
+            },
+            "playerCount": {
+              ".validate": "newData.isNumber() && newData.val() >= 1 && newData.val() <= 3"
+            },
+            "players": {
+              "$index": {
+                "name": { ".validate": "newData.isString() && newData.val().length <= 40" }
+              }
+            }
+          }
+        },
+
+        "commands": {
+          "$commandId": {
+            ".write": "auth != null && ((!data.exists() && newData.exists() && newData.child('deviceUid').val() === auth.uid && (auth.uid === root.child('rooms').child($roomId).child('hostUid').val() || auth.uid === root.child('rooms').child($roomId).child('teams/teamA/deviceUid').val() || auth.uid === root.child('rooms').child($roomId).child('teams/teamB/deviceUid').val())) || auth.uid === root.child('rooms').child($roomId).child('hostUid').val())",
+            ".validate": "newData.hasChildren(['id', 'type', 'teamId', 'deviceUid', 'createdAt'])",
+            "deviceUid": { ".validate": "newData.isString() && newData.val().length > 0" },
+            "teamId": {
+              ".validate": "newData.val() === 'teamA' || newData.val() === 'teamB'"
+            },
+            "createdAt": { ".validate": "newData.isNumber()" },
+            "id": { ".validate": "newData.isString() && newData.val().length > 0" }
+          }
+        },
+
+        "processedCommands": {
+          ".write": "auth != null && auth.uid === root.child('rooms').child($roomId).child('hostUid').val()"
+        },
+
+        "rejections": {
+          ".write": "auth != null && auth.uid === root.child('rooms').child($roomId).child('hostUid').val()"
+        },
+
+        "presence": {
+          "$uid": {
+            ".write": "auth != null && auth.uid === $uid"
+          }
+        }
+      }
+    }
+  }
+}

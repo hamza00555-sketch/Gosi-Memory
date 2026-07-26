@@ -63,6 +63,8 @@ export const ar = {
     roomFull: 'الغرفة ممتلئة.',
     connecting: 'جاري الاتصال…',
     shareCode: 'شارك هذا الرمز مع الفريق الآخر',
+    codeCopied: 'تم نسخ الرمز',
+    resume: 'أكمل المباراة',
   },
 
   setup: {
@@ -83,6 +85,10 @@ export const ar = {
     waitingReady: 'بانتظار جاهزية الفريق الآخر…',
     markReady: 'نحن جاهزون',
     unready: 'تراجع',
+    yourTeam: 'فريقك',
+    otherTeam: 'الفريق الآخر',
+    colorTaken: 'مستخدم',
+    comingSoon: 'قريبًا',
   },
 
   camera: {

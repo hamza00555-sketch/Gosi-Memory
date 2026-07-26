@@ -38,6 +38,22 @@ export type Command = CommandBase &
 
 export type CommandOf<T extends CommandType> = Extract<Command, { type: T }>;
 
+/**
+ * Omit that distributes over a union. A plain `Omit<Command, …>` collapses the
+ * discriminated union into one object type whose only keys are those common to
+ * every variant, which silently makes `targetId` and `answer` unassignable.
+ */
+type DistributiveOmit<T, K extends PropertyKey> = T extends unknown ? Omit<T, K> : never;
+
+/** A command with the envelope fields the transport fills in stripped off. */
+export type CommandDraft = DistributiveOmit<Command, 'id' | 'deviceUid' | 'createdAt'>;
+
+/** As above, but the sender may also infer the team from the device. */
+export type CommandIntent = DistributiveOmit<
+  Command,
+  'id' | 'deviceUid' | 'createdAt' | 'teamId'
+> & { teamId?: TeamId };
+
 /** Why the engine refused a command. Surfaced to the player as Arabic copy. */
 export type RejectionCode =
   | 'NOT_YOUR_TURN'

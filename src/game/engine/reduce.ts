@@ -53,7 +53,7 @@ export function reduce(
     case 'OPEN_PUZZLE':
       return handleOpenPuzzle(room, command.teamId);
     case 'ATTEMPT_PUZZLE':
-      return handleAttemptPuzzle(room, command.teamId, command.answer, now);
+      return handleAttemptPuzzle(room, command.teamId, command.answer);
     case 'SUBMIT_CHALLENGE':
       return handleChallengeSubmission(room, command.teamId, command.answer, command.sequence, now);
     case 'READY':
@@ -513,7 +513,6 @@ function handleAttemptPuzzle(
   room: RoomState,
   teamId: TeamId,
   answer: number,
-  now: EpochMs,
 ): EngineResult<ReduceOutput> {
   if (room.game.phase !== 'puzzle' || room.game.puzzleTeamId !== teamId) {
     return reject('WRONG_PHASE', 'لا يوجد لغز مفتوح لفريقك.');
