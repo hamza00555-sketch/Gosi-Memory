@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "typecheck": "tsc -b",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "ar:compile": "node tools/compile-targets.mjs",
+    "ar:inspect": "node tools/inspect-mind.mjs"
   },
   "dependencies": {
     "firebase": "^12.16.0",
