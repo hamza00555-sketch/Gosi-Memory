@@ -42,8 +42,18 @@ export const AR_TUNING = {
   controller: {
     /** Two, so both of a turn's picks can render at once. Each costs GPU time. */
     maxTrack: 2,
-    warmupTolerance: 5,
-    missTolerance: 5,
+    /**
+     * Consecutive frames MindAR needs before it declares a target found.
+     * Deliberately looser than the library default of 5: reference images
+     * photographed off-axis carry perspective distortion, so a real card can
+     * sit at a dozen matched points where a clean scan would give hundreds,
+     * and five-in-a-row is a bar it rarely clears. Acquiring eagerly is safe
+     * here because ScanGate — not the tracker — decides what becomes a move,
+     * and it independently requires four stable frames plus a debounce.
+     */
+    warmupTolerance: 2,
+    /** Conversely, hold a target longer once acquired so a wobble is absorbed. */
+    missTolerance: 8,
     filterMinCF: 0.0001,
     filterBeta: 1000,
   },

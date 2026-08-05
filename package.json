@@ -2,7 +2,7 @@
   "name": "qawsi",
   "version": "0.1.0",
   "private": true,
-  "description": "قوسي / QAWSI — a competitive online memory-card game for teams.",
+  "description": "\u0642\u0648\u0633\u064a / QAWSI \u2014 a competitive online memory-card game for teams.",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,7 +12,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "ar:compile": "node tools/compile-targets.mjs",
-    "ar:inspect": "node tools/inspect-mind.mjs"
+    "ar:inspect": "node tools/inspect-mind.mjs",
+    "ar:probe": "node tools/probe-match.mjs"
   },
   "dependencies": {
     "firebase": "^12.16.0",
