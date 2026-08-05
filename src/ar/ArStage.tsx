@@ -10,6 +10,8 @@ export type ArStatus =
   | 'idle'
   | 'requesting'
   | 'granted'
+  /** Camera is live and the target library is loaded — scanning for real. */
+  | 'tracking'
   | 'denied'
   | 'unsupported'
   | 'no_targets';
@@ -124,7 +126,11 @@ export function ArStage({
             scene.loseAnchor(event.sighting.targetId, now);
             break;
           case 'error':
+            console.warn('[ar] recognition error:', event.message);
             setPhase('no_targets');
+            break;
+          case 'ready':
+            setPhase('tracking');
             break;
           default:
             break;
@@ -173,7 +179,7 @@ export function ArStage({
 
       {/* A plain dark field until the camera is live, so the HUD is legible
           from the first frame instead of flashing over white. */}
-      {status !== 'granted' && (
+      {status !== 'granted' && status !== 'tracking' && (
         <div className="absolute inset-0 bg-gradient-to-b from-ink-900 via-ink-950 to-ink-900" />
       )}
 

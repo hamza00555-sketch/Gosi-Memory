@@ -15,7 +15,7 @@ import type {
 interface HeadlessController {
   addImageTargets(url: string): Promise<{ dimensions: Array<[number, number]> }>;
   addImageTargetsFromBuffer(buffer: ArrayBuffer): { dimensions: Array<[number, number]> };
-  dummyRun(video: HTMLVideoElement): void;
+  dummyRun(video: HTMLVideoElement): Promise<void> | void;
   processVideo(video: HTMLVideoElement): void;
   stopProcessVideo(): void;
   getProjectionMatrix(): MindArMatrix;
@@ -68,6 +68,36 @@ function cardSpacePostMatrix(width: number, height: number): number[] {
     0, 0, width, 0,
     width / 2, height / 2, 0, 1,
   ];
+}
+
+/** Resolve once the camera reports a real frame size, or false on timeout. */
+async function waitForVideoDimensions(
+  video: HTMLVideoElement,
+  timeoutMs = 8000,
+): Promise<boolean> {
+  if (video.videoWidth > 0 && video.videoHeight > 0) return true;
+
+  return new Promise<boolean>((resolve) => {
+    let settled = false;
+    const finish = (value: boolean): void => {
+      if (settled) return;
+      settled = true;
+      video.removeEventListener('loadedmetadata', onMeta);
+      video.removeEventListener('resize', onMeta);
+      window.clearInterval(poll);
+      window.clearTimeout(timer);
+      resolve(value);
+    };
+    const onMeta = (): void => {
+      if (video.videoWidth > 0 && video.videoHeight > 0) finish(true);
+    };
+
+    video.addEventListener('loadedmetadata', onMeta);
+    video.addEventListener('resize', onMeta);
+    // Some browsers populate the dimensions without firing either event.
+    const poll = window.setInterval(onMeta, 100);
+    const timer = window.setTimeout(() => finish(false), timeoutMs);
+  });
 }
 
 export class MindArRecognizer implements CardRecognizer {
@@ -123,12 +153,17 @@ export class MindArRecognizer implements CardRecognizer {
   }
 
   private async startInternal(video: HTMLVideoElement): Promise<void> {
-    const inputWidth = video.videoWidth;
-    const inputHeight = video.videoHeight;
-    if (inputWidth <= 0 || inputHeight <= 0) {
-      this.emit({ type: 'error', message: 'video has no dimensions yet' });
+    // A resolved play() does not mean the track has produced a frame yet, so
+    // videoWidth is routinely still 0 here — on iOS Safari almost always. The
+    // controller needs real dimensions, and reading them a beat too early used
+    // to abort recognition for the whole session.
+    const ready = await waitForVideoDimensions(video);
+    if (!ready) {
+      this.emit({ type: 'error', message: 'camera never reported a frame size' });
       return;
     }
+    const inputWidth = video.videoWidth;
+    const inputHeight = video.videoHeight;
 
     try {
       // Lazy so the tfjs-backed controller (several MB) never lands in the
@@ -158,7 +193,9 @@ export class MindArRecognizer implements CardRecognizer {
         this.postMatrices.set(index, cardSpacePostMatrix(width, height));
       });
 
-      controller.dummyRun(video);
+      // dummyRun warms the tfjs kernels; skipping the await means processVideo
+      // can start against an uninitialised backend and silently match nothing.
+      await controller.dummyRun(video);
       controller.processVideo(video);
 
       this.controller = controller;

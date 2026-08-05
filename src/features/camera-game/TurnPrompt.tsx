@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
+import type { ArStatus } from '../../ar';
 import type { RoomState } from '../../domain/game';
 import { ar } from '../../i18n/ar';
 import type { ScanFeedback } from './useScanPipeline';
@@ -9,6 +10,7 @@ interface Props {
   feedback: ScanFeedback;
   /** How many cards the camera can currently see. */
   visibleCount: number;
+  arStatus: ArStatus;
 }
 
 /**
@@ -16,8 +18,8 @@ interface Props {
  * generic instruction, because "اختر بطاقة مختلفة" is far more useful than
  * repeating "اقلب البطاقة الثانية" while the player waves the wrong card.
  */
-export function TurnPrompt({ room, myTurn, feedback, visibleCount }: Props): JSX.Element {
-  const { text, tone } = resolvePrompt(room, myTurn, feedback, visibleCount);
+export function TurnPrompt({ room, myTurn, feedback, visibleCount, arStatus }: Props): JSX.Element {
+  const { text, tone } = resolvePrompt(room, myTurn, feedback, visibleCount, arStatus);
 
   return (
     <AnimatePresence mode="wait">
@@ -44,7 +46,18 @@ function resolvePrompt(
   myTurn: boolean,
   feedback: ScanFeedback,
   visibleCount: number,
+  arStatus: ArStatus,
 ): { text: string; tone: 'neutral' | 'warn' | 'bad' } {
+  // A broken recognizer used to be indistinguishable from "no card in frame",
+  // which sent players hunting for a better angle at a camera that was never
+  // going to match anything. Say so instead.
+  if (arStatus === 'no_targets') return { text: ar.game.recognitionFailed, tone: 'bad' };
+  if (arStatus === 'denied') return { text: ar.camera.denied, tone: 'bad' };
+  if (arStatus === 'requesting' || arStatus === 'idle') {
+    return { text: ar.game.startingCamera, tone: 'neutral' };
+  }
+  if (arStatus === 'granted') return { text: ar.game.loadingTargets, tone: 'neutral' };
+
   if (!myTurn) return { text: ar.game.watching, tone: 'neutral' };
 
   if (feedback.kind === 'unsteady') return { text: ar.game.holdSteady, tone: 'warn' };

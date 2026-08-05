@@ -144,6 +144,9 @@ export const ar = {
     scanning: 'جاري البحث…',
     tracking: 'التعرف يعمل',
     noTracking: 'لا توجد بطاقة أمام الكاميرا',
+    startingCamera: 'جاري تشغيل الكاميرا…',
+    loadingTargets: 'جاري تحميل مكتبة التعرّف…',
+    recognitionFailed: 'تعذّر تشغيل التعرّف — أعد تحميل الصفحة',
   },
 
   outcome: {

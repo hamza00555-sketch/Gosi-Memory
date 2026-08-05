@@ -1,7 +1,8 @@
-import { lazy, Suspense, useEffect, useMemo } from 'react';
+import { lazy, Suspense, useEffect, useMemo, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ArStage } from '../../ar';
+import type { ArStatus } from '../../ar';
 import { ConnectionBanner } from '../../components/ConnectionBanner';
 import { ScreenFallback } from '../../components/ScreenFallback';
 import { isScanPhase } from '../../domain/game';
@@ -36,6 +37,7 @@ export default function CameraGameScreen(): JSX.Element {
   const navigate = useNavigate();
   const objectSetId = useDeviceStore((s) => s.selectedObjectSetId);
 
+  const [arStatus, setArStatus] = useState<ArStatus>('idle');
   const { room, connection, hostAbsent, myTeamId, isHost, loading } = useRoom(roomId);
   useHostAuthority(roomId, isHost);
 
@@ -81,7 +83,11 @@ export default function CameraGameScreen(): JSX.Element {
 
   return (
     <div className="relative h-full w-full overflow-hidden bg-ink-950">
-      <ArStage objectSetId={objectSetId} onSighting={pipeline.onSighting}>
+      <ArStage
+        objectSetId={objectSetId}
+        onSighting={pipeline.onSighting}
+        onStatusChange={setArStatus}
+      >
         <div
           className="pointer-events-none flex h-full flex-col justify-between"
           style={{ paddingTop: 'var(--safe-top)', paddingBottom: 'var(--safe-bottom)' }}
@@ -98,6 +104,7 @@ export default function CameraGameScreen(): JSX.Element {
               myTurn={myTurn}
               feedback={pipeline.feedback}
               visibleCount={pipeline.visible.length}
+              arStatus={arStatus}
             />
 
             <div className="flex items-center gap-2">
