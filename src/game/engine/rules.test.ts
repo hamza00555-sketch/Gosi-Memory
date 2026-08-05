@@ -1,10 +1,15 @@
 import { describe, expect, it } from 'vitest';
-import { PAIRS, TOTAL_PAIRS, getPuzzle } from '../../content';
+import { PAIRS, getPuzzle } from '../../content';
 import { MAX_PLAYERS_PER_TEAM } from '../../domain/teams';
 import { RULES } from '../rules/config';
 import { clampRoster, createTeam } from './initGame';
 import { reduce } from './reduce';
 import { newMatch, pairOf } from './testKit';
+
+// The rules are asserted against the full authored pack. TOTAL_PAIRS counts
+// only the pairs currently compiled into the target library, which would make
+// these tests fail whenever the card artwork changes.
+const PACK_PAIRS = PAIRS.length;
 
 describe('roster limits', () => {
   it('never allows more than three players in a team', () => {
@@ -343,7 +348,7 @@ describe('puzzle', () => {
 describe('winning', () => {
   it('ends the match the moment a team reaches the target score', () => {
     const h = newMatch({ targetScore: 500 }).begin();
-    for (let i = 0; i < TOTAL_PAIRS && h.room.game.phase !== 'completed'; i++) {
+    for (let i = 0; i < PACK_PAIRS && h.room.game.phase !== 'completed'; i++) {
       h.matchAndSkipChallenge(i);
     }
     expect(h.score('teamA')).toBeGreaterThanOrEqual(500);
@@ -355,11 +360,11 @@ describe('winning', () => {
   it('refuses any further command once completed', () => {
     const h = newMatch({ targetScore: 200 }).begin();
     // Each pair can only be matched once, so walk the pack until someone wins.
-    for (let i = 0; i < TOTAL_PAIRS && h.room.game.phase !== 'completed'; i++) {
+    for (let i = 0; i < PACK_PAIRS && h.room.game.phase !== 'completed'; i++) {
       h.matchAndSkipChallenge(i);
     }
     expect(h.room.game.phase).toBe('completed');
-    expect(h.scan(pairOf(TOTAL_PAIRS - 1)[0])).toBe(false);
+    expect(h.scan(pairOf(PACK_PAIRS - 1)[0])).toBe(false);
     expect(h.lastRejection?.code).toBe('GAME_COMPLETED');
   });
 
@@ -376,16 +381,16 @@ describe('winning', () => {
 describe('round reset', () => {
   it('stops for a reshuffle when the pairs run out below the target', () => {
     const h = newMatch({ targetScore: 5000 }).begin();
-    for (let i = 0; i < TOTAL_PAIRS; i++) h.matchAndSkipChallenge(i);
+    for (let i = 0; i < PACK_PAIRS; i++) h.matchAndSkipChallenge(i);
 
     expect(h.room.game.phase).toBe('round_reset');
-    expect(Object.keys(h.room.game.matchedPairIds)).toHaveLength(TOTAL_PAIRS);
+    expect(Object.keys(h.room.game.matchedPairIds)).toHaveLength(PACK_PAIRS);
     expect(h.eventsOfType('round_exhausted')).toHaveLength(1);
   });
 
   it('starts a new round only when both teams confirm the reshuffle', () => {
     const h = newMatch({ targetScore: 5000 }).begin();
-    for (let i = 0; i < TOTAL_PAIRS; i++) h.matchAndSkipChallenge(i);
+    for (let i = 0; i < PACK_PAIRS; i++) h.matchAndSkipChallenge(i);
     const carriedScore = h.score('teamA');
 
     expect(h.dispatch({ type: 'ROUND_READY', teamId: 'teamA' })).toBe(true);
@@ -400,7 +405,7 @@ describe('round reset', () => {
 
   it('gives both teams a fresh puzzle in the new round', () => {
     const h = newMatch({ targetScore: 5000 }).begin();
-    for (let i = 0; i < TOTAL_PAIRS; i++) h.matchAndSkipChallenge(i);
+    for (let i = 0; i < PACK_PAIRS; i++) h.matchAndSkipChallenge(i);
     const before = h.room.puzzles.teamA.puzzleId;
     h.dispatch({ type: 'ROUND_READY', teamId: 'teamA' });
     h.dispatch({ type: 'ROUND_READY', teamId: 'teamB' });

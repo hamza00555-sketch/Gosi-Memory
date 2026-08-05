@@ -210,11 +210,10 @@ function assertContentIntegrity(): void {
     }
   }
 
-  for (const card of CARDS) {
-    if (!TARGETS.some((t) => t.targetId === card.targetId)) {
-      throw new Error(`[content] card "${card.targetId}" is missing from targets-manifest.json`);
-    }
-  }
+  // A card may legitimately be absent from the manifest: cards are printed and
+  // compiled into the .mind file in batches, and an uncompiled card simply
+  // cannot be recognized yet. The reverse — a manifest entry with no card — is
+  // still a hard error, and is checked above.
 
   const defaultSet = OBJECT_SETS.find((s) => s.id === DEFAULT_OBJECT_SET_ID);
   if (!defaultSet) {
@@ -279,5 +278,19 @@ export function getChallenge(challengeId: string): ChallengeDefinition | undefin
   return challengeByIdMap.get(challengeId);
 }
 
-/** Total number of pairs in the active pack — the round ends when all match. */
-export const TOTAL_PAIRS = PAIRS.length;
+/** Cards that are actually in the compiled target library and can be scanned. */
+export const RECOGNIZABLE_TARGET_IDS: ReadonlySet<string> = new Set(
+  TARGETS.map((t) => t.targetId),
+);
+
+/** Pairs whose BOTH halves are compiled — only these are playable today. */
+export const PLAYABLE_PAIRS: PairDefinition[] = PAIRS.filter((p) =>
+  p.targetIds.every((id) => RECOGNIZABLE_TARGET_IDS.has(id)),
+);
+
+/**
+ * Pairs the round can actually complete with. While the target library is
+ * partial this is smaller than PAIRS.length, and the round-exhausted check must
+ * use it — otherwise a round could never end.
+ */
+export const TOTAL_PAIRS = PLAYABLE_PAIRS.length;

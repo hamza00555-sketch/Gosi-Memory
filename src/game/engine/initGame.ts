@@ -103,11 +103,12 @@ export function createRoom(params: {
   };
 }
 
-export function defaultRoomConfig(targetScore = 600): RoomConfig {
+export function defaultRoomConfig(targetScore = 600, pairCount = TOTAL_PAIRS): RoomConfig {
   return {
     targetScore,
     turnDurationMs: RULES.turnDurationMs,
     packId: 'qawsi_core_v1',
+    pairCount,
   };
 }
 

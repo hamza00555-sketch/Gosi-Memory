@@ -73,6 +73,15 @@ export interface RoomConfig {
   turnDurationMs: number;
   /** Content pack driving cards, challenges and puzzles. */
   packId: string;
+  /**
+   * How many pairs this match must find before the table is exhausted.
+   *
+   * Pinned when the room is created rather than read from content at decision
+   * time: only pairs whose images are in the compiled target library can be
+   * scanned, and recompiling the library mid-match must not silently move the
+   * finish line.
+   */
+  pairCount: number;
 }
 
 /** Everything under rooms/{roomId}. */

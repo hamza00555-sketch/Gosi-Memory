@@ -13,6 +13,7 @@ import type { TeamPuzzleState } from '../../domain/puzzle';
 import type { Team, TeamColor, TeamPlayer } from '../../domain/teams';
 import { TEAM_COLORS } from '../../domain/teams';
 import { clampRoster, createTeamPuzzle } from '../../game/engine';
+import { TOTAL_PAIRS } from '../../content';
 import { RULES } from '../../game/rules/config';
 
 /**
@@ -477,6 +478,9 @@ export function fromRtdb(raw: unknown): RoomState {
     targetScore: asNumber(rawConfig['targetScore'], 600),
     turnDurationMs: asNumber(rawConfig['turnDurationMs'], RULES.turnDurationMs),
     packId: asString(rawConfig['packId'], 'qawsi_core_v1'),
+    // Rooms written before pairCount existed fall back to today's playable
+    // count rather than zero, which would end the round immediately.
+    pairCount: asNumber(rawConfig['pairCount'], TOTAL_PAIRS),
   };
 
   const game = gameFromRtdb(source['game'], config, createdAt);

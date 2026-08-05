@@ -1,4 +1,4 @@
-import { TOTAL_PAIRS, getCard, getPuzzle, getTargetById } from '../../content';
+import { getCard, getPuzzle } from '../../content';
 import type { Command, EngineResult } from '../../domain/commands';
 import { ok, reject } from '../../domain/commands';
 import { CHALLENGE_SCORE, MATCH_SCORE, isScanPhase } from '../../domain/game';
@@ -89,9 +89,13 @@ function handleScan(
     return reject('LOW_CONFIDENCE', 'ثبت الجهاز قليلًا.');
   }
 
-  const target = getTargetById(command.targetId);
+  // Identity is checked against the card registry, not the compiled target
+  // manifest. Whether a card's image happens to be in today's .mind file is an
+  // asset question the AR layer already answers — it can only ever report a
+  // targetId it resolved from that manifest — and folding it in here would make
+  // the rules change every time the artwork is recompiled.
   const card = getCard(command.targetId);
-  if (!target || !card) {
+  if (!card) {
     return reject('UNKNOWN_TARGET', 'بطاقة غير معروفة.');
   }
   if (game.matchedPairIds[card.pairId] === true) {
@@ -314,7 +318,7 @@ function endTurn(
     };
   }
 
-  if (Object.keys(next.game.matchedPairIds).length >= TOTAL_PAIRS) {
+  if (Object.keys(next.game.matchedPairIds).length >= next.config.pairCount) {
     events.push({ type: 'round_exhausted', roundNumber: next.game.roundNumber });
     return {
       room: bump(next, {

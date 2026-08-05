@@ -26,7 +26,9 @@ export class Harness {
       id: 'room_test',
       code: 'TST1',
       hostUid: 'device_a',
-      config: defaultRoomConfig(options.targetScore ?? 600),
+      // Rules tests exercise the full authored pack, not whichever subset
+      // happens to be compiled into the target library today.
+      config: defaultRoomConfig(options.targetScore ?? 600, PAIRS.length),
       now: this.now,
       seed: options.seed ?? 12345,
     });
